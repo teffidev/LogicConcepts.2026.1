@@ -1,7 +1,7 @@
 ﻿using Shared;
 
 var answer = string.Empty;
-var options = new List<string>("s", "n");
+var options = new List<string> { "s", "n"};
 do
 {
     var number = ConsoleExtensions.GetInt("Ingrese número entero diferente de cero: ");
@@ -17,5 +17,11 @@ do
     else
     {
         Console.WriteLine($"El número {number} es Impar");
-    }  
-} while (true);
+    }
+
+    do
+    {
+        answer = ConsoleExtensions.GetValidOptions("¿Desea continuar [S]i, [N]o}?: ", options);
+    } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+
+} while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
