@@ -20,6 +20,7 @@ do
         Console.WriteLine($"El número mayor es: {c}");
     }
 
+    // Validate that the user enters a valid option to continue or not with the programme
     do
     {
         answer = ConsoleExtensions.GetValidOptions("¿Desea continuar [S]i, [N]o}?: ", options);
